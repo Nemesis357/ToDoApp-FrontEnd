@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="container">
+  <h1>User review page for user: {{ selectedUser }}</h1>
+  <div class="row" *ngIf="user">
+    <div class="col-md-8">
+      <h4>Username: {{ user.username }}</h4>
+      <p>Name: {{ user.name }}</p>
+      <p>Name: {{ user.email }}</p>
+      <p *ngFor="let role of user.roles">Role: {{ role.name }}</p>
+    </div>
+    <div class="col-md-4 d-flex flex-column">
+      <div class="btn-group p-2">
+        <button class="btn btn-outline-primary" (click)="updateUser(user.id)">Update</button>
+        <button class="btn btn-outline-danger" (click)="deleteUser(user.id)">Delete</button>
+      </div>
+      <div class="btn-group p-2">
+        <button class="btn btn-outline-info" *ngIf="isUser()" (click)="makeAdmin(user.id)">Make Admin</button>
+        <button class="btn btn-outline-info" *ngIf="isAdmin() || user.roles.length === 0" (click)="makeUser(user.id)">Make User</button>
+      </div>
+    </div>
+  </div>
+</div>
+

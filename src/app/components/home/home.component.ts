@@ -7,14 +7,10 @@ import { HttpService } from '../../services/http.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  title = 'Demo';
+  title = 'To Do Application';
   greeting = {'id': 'XXX', 'content': 'Hello World'};
 
-  constructor(private http: HttpService) {
-    http.getResources().subscribe(res => {
-      console.log("Response: ", res)
-    })
-  }
+  constructor() { }
 
   ngOnInit() {
   }

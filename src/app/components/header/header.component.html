@@ -4,10 +4,16 @@
       <a routerLink="/">
         <img src="../../../assets/images/to-do.png" alt="Logo image">
       </a>
+      <a *ngIf="username" href="#" class="username">{{ username }}</a>
     </div>
-    <div class="btn-group">
+    <div *ngIf="!userSet" class="btn-group">
       <a routerLink="/login" class="btn btn-primary">Login</a>
       <a routerLink="/signup" class="btn btn-success">Sign Up</a>
+    </div>
+    <div *ngIf="userSet">
+      <a routerLink="/overview" class="btn btn-primary">Overview</a>
+      <a routerLink="/admin" class="btn btn-primary">Admin</a>
+      <button class="btn btn-danger" (click)="logout()">Logout</button>
     </div>
   </nav>
 </header>

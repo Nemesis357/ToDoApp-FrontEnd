@@ -1,0 +1,10 @@
+@import '../../../sass/global';
+
+.user-list {
+    list-style: none;
+}
+
+.user-details {
+    border-bottom: 1px solid $secondary;
+    padding: 10px;
+}

@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container">
+  <form class="form" #form="ngForm" (ngSubmit)="submit(form.value)">
+    <h2>Add new to-do task:</h2>
+    <!-- Title -->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input ngModel #title="ngModel" name="title" type="title" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Enter title">
+    </div>
+    <!-- Due date -->
+    <div class="form-group">
+      <label for="dueDate">Do date</label>
+      <input ngModel #dueDate="ngModel" name="dueDate" type="date" class="form-control" id="dueDate" aria-describedby="dueDateHelp" placeholder="Enter due date">
+    </div>
+    <!-- Content -->
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea ngModel #content="ngModel" name="content" type="text" class="form-control" id="content" aria-describedby="contentHelp" placeholder="Enter content"></textarea>
+    </div>
+    <button class="btn btn-primary w-100">Create</button>
+  </form>
+</div>
